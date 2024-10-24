@@ -8,4 +8,9 @@ body {
   color: var(--foreground);
 }
 
+.gradientBackground {
+  background: linear-gradient(90deg, rgba(11, 11, 16, 1) 0%, rgba(7, 7, 87, 1) 98%);
+}
+
+
 
