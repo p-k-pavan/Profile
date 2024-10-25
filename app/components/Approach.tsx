@@ -6,8 +6,8 @@ const Approach = () => {
 
   return (
     <section className="w-full">
-      <h1 className="font-bold text-2xl text-center text-purple-600">
-        My <span className="text-purple">approach</span>
+      <h1 className="font-bold text-2xl md:3xl lg:4xl text-center underline">
+        My <span className="text-purple-600 underline decoration-purple-600">approach</span>
       </h1>
      
       <div className="my-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4">

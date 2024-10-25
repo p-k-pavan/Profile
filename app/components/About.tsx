@@ -96,7 +96,7 @@ const About = () => {
     setCopied(true);
   };
   return (
-    <section id="about" className="p-10 flex justify-center w-full mx-auto">
+    <section id="about" className="p-5 flex justify-center w-full mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-6 gap-4 max-w-9xl mx-auto w-full xl:ml-32 lg:ml-16">
         {cardData?.map((card, index) => (
           <WobbleCard
