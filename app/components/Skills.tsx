@@ -74,9 +74,9 @@ const skillItem = [
   
   const Skill = () => {
     return (
-      <section className=" lg:pt-32 mb-10 py-10">
+      <section className=" lg:pt-32 mb-10 py-10 mt-20">
         <div className="px-4 mx-auto lg:px-8 xl:max-w-6xl">
-          <h2 className="bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500 text-center text-2xl lg:4xl font-semibold underline decoration-purple-600">
+          <h2 className="bg-clip-text text-transparent bg-gradient-to-r from-gray-200 to-gray-500 text-center text-2xl lg:4xl font-bold underline decoration-purple-600">
             Essential Tools I Use
           </h2>
           <p className="mt-2 text-gray-600 text-center">
