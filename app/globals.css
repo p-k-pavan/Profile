@@ -12,4 +12,8 @@ body {
   background: linear-gradient(90deg, rgba(11, 11, 16, 1) 0%, rgba(7, 7, 87, 1) 98%);
 }
 
-
+@layer utilities {
+  .heading {
+    @apply font-bold text-4xl md:text-5xl text-center;
+  }
+}

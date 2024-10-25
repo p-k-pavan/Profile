@@ -15,6 +15,7 @@ export default function Home() {
           { name: "Home", link: "/" },
           { name: "About", link: "#about" },
           { name: "Project", link: "#project" },
+          { name: "Contact", link: "#contact" },
         ]}
       />
       <Hero />
