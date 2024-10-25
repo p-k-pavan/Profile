@@ -7,6 +7,7 @@ import { IoCopyOutline } from "react-icons/io5";
 import Lottie from "react-lottie";
 import MagicButton from "./ui/MagicButton";
 import animationData from "@/data/confetti.json";
+// import { cardData } from "@/data/index"
 
 export const cardData = [
   {
@@ -44,13 +45,13 @@ export const cardData = [
     id: 4,
     title: "Tech enthusiast with a passion for development.",
     description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-1 relative", 
-    imgClassName: "absolute right-0 bottom-0 w-24 h-auto", 
+    className: "lg:col-span-2 md:col-span-3 md:row-span-1 relative",
+    imgClassName: "absolute right-0 bottom-0 w-24 h-auto",
     titleClassName: "justify-start",
     img: "/grid.svg",
     spareImg: "/b4.svg",
   },
-  
+
 
   {
     id: 5,
@@ -95,9 +96,9 @@ const About = () => {
     setCopied(true);
   };
   return (
-    <section className="p-10 flex justify-center">
+    <section id="about" className="p-10 flex justify-center w-full mx-auto">
       <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-6 gap-4 max-w-9xl mx-auto w-full xl:ml-32 lg:ml-16">
-        {cardData.map((card, index) => (
+        {cardData?.map((card, index) => (
           <WobbleCard
             key={index}
             containerClassName={`${card.className} gradientBackground`}
@@ -131,9 +132,8 @@ const About = () => {
               {card.id === 6 && (
                 <div className="mt-5 relative">
                   <div
-                    className={`absolute -button-5 right-0 ${
-                      copied ? "block" : "block"
-                    }`}
+                    className={`absolute -button-5 right-0 ${copied ? "block" : "block"
+                      }`}
                   >
                     <Lottie options={defaultOptions} height={200} width={400} />
                   </div>
@@ -180,22 +180,14 @@ const About = () => {
                 </div>
               )}
               {card.id === 5 && (
-  <div className="relative">
-    {/* Add relative positioning to the parent div */}
-    <Image
-      src={card.img}
-      alt={card.title}
-      className={`${card.imgClassName} absolute right-0 bottom-0`}
-      width={500}
-      height={300}
-    />
-    <img
-      src={card.spareImg}
-      alt={card.spareImg}
-      className="object-cover object-center w-full h-full"
-    />
-  </div>
-)}
+                <div className="relative">
+                  <img
+                    src={card.spareImg}
+                    alt={card.spareImg}
+                    className="object-cover object-center w-full h-full"
+                  />
+                </div>
+              )}
 
             </div>
           </WobbleCard>
