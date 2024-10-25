@@ -43,7 +43,7 @@ export const projects = [
 
 const RecentProjects = () => {
   return (
-    <div className="py-5" id="project">
+    <div className="py-10" id="project">
       <h1 className="text-center font-bold text-2xl">
         A small selection of{" "}
         <span className="text-purple-400">recent projects</span>

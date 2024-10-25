@@ -5,7 +5,7 @@ const Approach = () => {
  
 
   return (
-    <section className="w-full">
+    <section className="w-full py-10">
       <h1 className="font-bold text-2xl md:3xl lg:4xl text-center underline">
         My <span className="text-purple-600 underline decoration-purple-600">approach</span>
       </h1>
