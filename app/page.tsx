@@ -4,6 +4,8 @@ import Hero from "./components/Hero";
 import { FloatingNav } from "./components/ui/FloatingNavbar";
 import About from "./components/About"; 
 import RecentProjects from "./components/RecentProjects"
+import Approach from "./components/Approach"
+import Footer from "./components/Footer"
 
 export default function Home() {
   return (
@@ -18,6 +20,8 @@ export default function Home() {
       <Hero />
       <About /> 
       <RecentProjects />
+      <Approach />
+      <Footer />
     </div>
   );
 }

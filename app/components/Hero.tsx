@@ -27,10 +27,10 @@ const Hero = () => {
               Turning Ideas into Engaging Experiences
             </h2>
             <TextGenerateEffect
-              className="text-center text-[40px] md:text-5xl lg:text-6xl"
+              className="text-center text-[40px] md:text-3xl lg:text-4xl"
               words="Creating fluid and user-friendly applications with the latest web technologies."
             />
-            <p className="text-center md:tracking-wider my-6 text-sm md:text-lg lg:text-2xl">
+            <p className="text-center md:tracking-wider my-6 text-sm md:text-lg lg:text-xl">
               Hi! I&apos;m Pavan Kumar R, a full-stack web developer dedicated
               to building impactful digital solutions.
             </p>
