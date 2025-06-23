@@ -1,85 +1,89 @@
 "use client";
 import { WobbleCard } from "./ui/WobbleCard";
 import React, { useState } from "react";
-import Image from "next/image";
-
 import { IoCopyOutline } from "react-icons/io5";
 import Lottie from "react-lottie";
 import MagicButton from "./ui/MagicButton";
 import animationData from "@/data/confetti.json";
-// import { cardData } from "@/data/index"
 
 export const cardData = [
   {
     id: 1,
-    title: "I prioritize client collaboration, fostering open communication ",
-    description: "",
-    className:
-      "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh] relative",
-    imgClassName: "absolute inset-0 w-full h-full object-cover",
-    titleClassName: "z-10 relative justify-end",
-    img: "/b1.svg",
-    spareImg: "",
+    title: "Full-Stack Architect",
+    description: "Crafting seamless digital experiences from front to back",
+    content: [
+      "MERN stack specialist",
+      "Real-time applications",
+      "Microservices architecture"
+    ],
+    className: "lg:col-span-4 md:col-span-6 md:row-span-2",
+    bgColor: "bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-fuchsia-500 via-red-600 to-orange-400",
+    textColor: "text-white"
   },
   {
     id: 2,
-    title: "I'm very flexible with time zone communications",
-    description: "",
-    className: "lg:col-span-2 md:col-span-2 md:row-span-2",
-    imgClassName: "",
-    titleClassName: "justify-start",
-    img: "",
-    spareImg: "",
+    title: "Cloud Alchemist",
+    description: "Transforming infrastructure with modern DevOps magic",
+    content: [
+      "Kubernetes orchestration",
+      "CI/CD pipelines",
+      "Load balancing & monitoring"
+    ],
+    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
+    bgColor: "bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-cyan-400 via-blue-500 to-indigo-600",
+    textColor: "text-white"
   },
   {
     id: 3,
-    title: "My tech stack",
-    description: "I constantly try to improve",
-    className: "lg:col-span-2 md:col-span-4 md:row-span-2",
-    imgClassName: "",
-    titleClassName: "bottom-0",
-    img: "",
-    spareImg: "",
+    title: "Tech Stack",
+    description: "My digital toolbox for building the future",
+    className: "lg:col-span-3 md:col-span-3 md:row-span-1",
+    bgColor: "bg-[conic-gradient(at_bottom_left,_var(--tw-gradient-stops))] from-lime-400 via-emerald-500 to-green-600",
+    textColor: "text-white",
+    techStacks: {
+      "Frontend": ["React", "Next.js", "Tailwind", "Framer"],
+      "Backend": ["Node", "Express", "Redis", "Flask"]
+    }
   },
   {
     id: 4,
-    title: "Tech enthusiast with a passion for development.",
-    description: "",
-    className: "lg:col-span-2 md:col-span-3 md:row-span-1 relative",
-    imgClassName: "absolute right-0 bottom-0 w-24 h-auto",
-    titleClassName: "justify-start",
-    img: "/grid.svg",
-    spareImg: "/b4.svg",
+    title: "Automation Wizard",
+    description: "Eliminating repetitive tasks with code",
+    content: [
+      "Infrastructure as Code",
+      "Bash scripting",
+      "CI automation"
+    ],
+    className: "lg:col-span-3 md:col-span-3 md:row-span-1",
+    bgColor: "bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-rose-500 via-pink-600 to-purple-700",
+    textColor: "text-white"
   },
-
-
   {
     id: 5,
-    title: "Currently building a JS Animation library",
-    description: "The Inside Scoop",
-    className: "md:col-span-3 md:row-span-2 relative",
-    imgClassName: "absolute right-0 bottom-0 md:w-96 w-60",
-    titleClassName: "justify-center md:justify-start lg:justify-center",
-    img: "/b5.svg",
-    spareImg: "/grid.svg",
+    title: "UI Artisan",
+    description: "Building interfaces that delight users",
+    content: [
+      "Interactive & motion UI",
+      "Accessible & responsive layouts",
+      "Component-driven design"
+    ],
+    className: "md:col-span-4 md:row-span-1",
+    bgColor: "bg-[conic-gradient(at_left,_var(--tw-gradient-stops))] from-amber-400 via-yellow-500 to-orange-500",
+    textColor: "text-black"
   },
   {
     id: 6,
-    title: "Do you want to start a project together?",
-    description: "",
+    title: "Let's Create",
+    description: "Ready to bring your vision to life?",
     className: "lg:col-span-2 md:col-span-3 md:row-span-1",
-    imgClassName: "",
-    titleClassName: "justify-center md:max-w-full max-w-60 text-center",
-    img: "",
-    spareImg: "",
-  },
+    bgColor: "bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-violet-500 via-purple-600 to-indigo-700",
+    textColor: "text-white"
+  }
 ];
+
 
 const About = () => {
   const [copied, setCopied] = useState(false);
-
-  const leftLists = ["ReactJS", "Express", "Typescript"];
-  const rightLists = ["VueJS", "NuxtJS", "GraphQL"];
 
   const defaultOptions = {
     loop: copied,
@@ -95,100 +99,72 @@ const About = () => {
     navigator.clipboard.writeText(text);
     setCopied(true);
   };
-  return (
-    <section id="about" className="p-20 flex justify-center w-full mx-auto">
-      <div className="grid grid-cols-1 md:grid-cols-5 lg:grid-cols-6 gap-4 max-w-9xl mx-auto w-full xl:ml-32 lg:ml-16">
-        {cardData?.map((card, index) => (
-          <WobbleCard
-            key={index}
-            containerClassName={`${card.className} gradientBackground`}
-          >
-            <div className="max-w-xs">
-              <div className="font-sans font-extralight md:max-w-32 md:text-xs lg:text-base text-sm text-[#C1C2D3] z-10">
-                {card.description}
-              </div>
-              <div
-                className={`font-sans text-lg lg:text-3xl max-w-96 font-bold z-10`}
-              >
-                {card.title}
-              </div>
 
-              {card.img && (
-                <Image
-                  src={card.img}
-                  alt={card.title}
-                  className={card.imgClassName}
-                  width={500}
-                  height={300}
-                />
+  return (
+    <section id="about" className="p-4 md:p-12 w-full bg-black">
+      <div className="grid grid-cols-1 md:grid-cols-6 lg:grid-cols-6 gap-4 max-w-7xl mx-auto">
+        {cardData.map((card) => (
+          <WobbleCard
+            key={card.id}
+            containerClassName={`${card.className} ${card.bgColor} p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 min-h-[180px] flex flex-col`}
+          >
+            <div className={`flex-1 flex flex-col ${card.textColor}`}>
+              <h3 className="text-xl md:text-2xl font-bold mb-2">
+                {card.title}
+              </h3>
+              <p className="text-sm md:text-base mb-3 opacity-90">
+                {card.description}
+              </p>
+
+              {card.content && (
+                <ul className="mt-2 space-y-1">
+                  {card.content.map((item, i) => (
+                    <li key={i} className="flex items-center">
+                      <span className="mr-2">✦</span>
+                      <span className="text-xs md:text-sm">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               )}
-              {card.spareImg && (
-                <img
-                  src={card.spareImg}
-                  alt={card.spareImg}
-                  className="object-cover object-center w-full h-full"
-                />
+
+              {card.techStacks && (
+                <div className="mt-auto grid grid-cols-2 gap-2">
+                  {Object.entries(card.techStacks).map(([category, items]) => (
+                    <div key={category}>
+                      <h4 className="text-[10px] uppercase font-bold mb-1">
+                        {category}
+                      </h4>
+                      <div className="space-y-1">
+                        {items.map((item) => (
+                          <span
+                            key={item}
+                            className="block text-xs px-2 py-1 rounded bg-black/20 backdrop-blur-sm"
+                          >
+                            {item}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
               )}
+
               {card.id === 6 && (
-                <div className="mt-5 relative">
-                  <div
-                    className={`absolute -button-5 right-0 ${copied ? "block" : "block"
-                      }`}
-                  >
-                    <Lottie options={defaultOptions} height={200} width={400} />
-                  </div>
+                <div className="mt-auto relative">
+                  {copied && (
+                    <div className="absolute -top-20 -right-10">
+                      <Lottie options={defaultOptions} height={150} width={150} />
+                    </div>
+                  )}
                   <MagicButton
-                    title={
-                      copied ? "Email is Copied!" : "Copy my email address"
-                    }
+                    title={copied ? "Email Copied!" : "Get In Touch"}
                     icon={<IoCopyOutline />}
                     position="left"
                     handleClick={handleCopy}
-                    otherClasses="!bg-[#161A31]"
+                    otherClasses="!bg-black/30 hover:!bg-black/50"
                   />
                 </div>
               )}
-              {card.id === 3 && (
-                <div className="absolute bottom-0 right-0 flex gap-1 lg:gap-3 p-4">
-                  {/* tech stack lists */}
-                  <div className="flex flex-col gap-3 md:gap-3 lg:gap-3">
-                    {leftLists.map((item, i) => (
-                      <span
-                        key={i}
-                        className="lg:py-4 lg:px-2 py-2 px-2 text-xs lg:text-base opacity-50 
-            lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                      >
-                        {item}
-                      </span>
-                    ))}
-
-                    <span className="lg:py-4 lg:px-3 py-4 px-3 rounded-lg text-center bg-transparent"></span>
-                  </div>
-
-                  <div className="flex flex-col gap-3 md:gap-3 lg:gap-8">
-                    <span className="lg:py-4 lg:px-3 py-4 px-3 rounded-lg text-center bg-transparent"></span>
-                    {rightLists.map((item, i) => (
-                      <span
-                        key={i}
-                        className="lg:py-4 lg:px-3 py-2 px-3 text-xs lg:text-base opacity-50 
-            lg:opacity-100 rounded-lg text-center bg-[#10132E]"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
-              {card.id === 5 && (
-                <div className="relative">
-                  <img
-                    src={card.spareImg}
-                    alt={card.spareImg}
-                    className="object-cover object-center w-full h-full"
-                  />
-                </div>
-              )}
-
             </div>
           </WobbleCard>
         ))}
