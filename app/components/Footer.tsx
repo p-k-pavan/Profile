@@ -1,66 +1,141 @@
-import { FaLocationArrow } from "react-icons/fa6";
-
+import { FaLocationArrow, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { FaXTwitter, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import MagicButton from "./ui/MagicButton";
-
-export const socialMedia = [
-    {
-      id: 1,
-      img: "/git.svg",
-    },
-    {
-      id: 2,
-      img: "/twit.svg",
-    },
-    {
-      id: 3,
-      img: "/link.svg",
-    },
-  ];
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
-    <footer className="w-full pt-20 pb-10 px-10 lg:px-32 " id="contact">
-     
-      <div className="w-full absolute left-0 -bottom-72 min-h-96">
-        <img
-          src="/footer-grid.svg"
-          alt="grid"
-          className="w-full h-full opacity-50 "
-        />
+    <footer className="relative w-full pt-32 pb-16 px-4 sm:px-8 lg:px-16 xl:px-24 overflow-hidden bg-black" id="contact">
+      {/* Glowing gradient elements */}
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[3%]"></div>
+
+        {/* Gradient spotlights */}
+        <div className="absolute -top-1/4 -left-1/4 w-[150%] h-[150%] bg-radial-gradient(from-center, rgba(99, 102, 241, 0.08) 0%, transparent 70%)"></div>
+        <div className="absolute -bottom-1/4 -right-1/4 w-[150%] h-[150%] bg-radial-gradient(from-center, rgba(168, 85, 247, 0.05) 0%, transparent 70%)"></div>
+
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black"></div>
       </div>
 
-      <div className="flex flex-col items-center">
-        <h1 className="heading lg:max-w-[45vw]">
-          Ready to take <span className="text-purple">your</span> digital
-          presence to the next level?
-        </h1>
-        <p className="text-white-200 md:mt-10 my-5 text-center">
-          Reach out to me today and let&apos;s discuss how I can help you
-          achieve your goals.
-        </p>
-        <a href="mailto:pkpavan2003@gmail.com">
-          <MagicButton
-            title="Let's get in touch"
-            icon={<FaLocationArrow />}
-            position="right"
-          />
-        </a>
-      </div>
-      <div className="flex mt-16 md:flex-row flex-col justify-between items-center xl:px-40">
-        <p className="md:text-base text-sm md:font-normal font-light mb-2">
-          Copyright © 2024 PAVAN KUMAR R
-        </p>
+      {/* Main content */}
+      <div className="max-w-7xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col items-center text-center"
+        >
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+            Let's <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">Work Together</span>
+          </h1>
+          <p className="text-lg md:text-xl text-gray-400 max-w-2xl mb-10">
+            Ready to bring your ideas to life? Contact me to discuss your project or just say hello!
+          </p>
 
-        <div className="flex items-center md:gap-3 gap-6">
-          {socialMedia.map((info) => (
-            <div
-              key={info.id}
-              className="w-10 h-10 cursor-pointer flex justify-center items-center backdrop-filter backdrop-blur-lg saturate-180 bg-opacity-75 bg-black-200 rounded-lg border border-black-300"
-            >
-              <img src={info.img} alt="icons" width={20} height={20} />
+          <div className="flex flex-col sm:flex-row gap-6 mb-16 w-full max-w-lg">
+            <a href="mailto:pkpavan.ise@gmail.com" className="flex-1">
+              <MagicButton
+                title="Get in Touch"
+                icon={<FaLocationArrow />}
+                position="right"
+                otherClasses="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 shadow-lg shadow-indigo-900/30"
+              />
+            </a>
+          </div>
+
+        </motion.div>
+
+        {/* Contact info - Gradient accent cards */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20"
+        >
+          <div className="p-6 rounded-xl bg-gradient-to-br from-gray-900 to-black border border-indigo-900/50 hover:border-blue-400/50 transition-all group">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 rounded-full bg-blue-900/20 flex items-center justify-center group-hover:bg-blue-900/30 transition-all">
+                <FaEnvelope className="text-blue-400 text-xl group-hover:text-blue-300 transition-colors" />
+              </div>
+              <h3 className="text-xl font-semibold text-white">Email</h3>
             </div>
-          ))}
-        </div>
+            <a
+              href="mailto:pkpavan.ise@gmail.com"
+              className="text-gray-400 hover:text-blue-300 transition-colors"
+            >
+              pkpavan.ise@gmail.com
+            </a>
+          </div>
+
+          <div className="p-6 rounded-xl bg-gradient-to-br from-gray-900 to-black border border-purple-900/50 hover:border-purple-400/50 transition-all group">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 rounded-full bg-purple-900/20 flex items-center justify-center group-hover:bg-purple-900/30 transition-all">
+                <FaPhoneAlt className="text-purple-400 text-xl group-hover:text-purple-300 transition-colors" />
+              </div>
+              <h3 className="text-xl font-semibold text-white">Phone</h3>
+            </div>
+            <a
+              href="tel:+918971092326"
+              className="text-gray-400 hover:text-purple-300 transition-colors"
+            >
+              +91 89710 92326
+            </a>
+          </div>
+
+          <div className="p-6 rounded-xl bg-gradient-to-br from-gray-900 to-black border border-indigo-900/50 hover:border-blue-400/50 transition-all group">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-900/20 to-purple-900/20 flex items-center justify-center group-hover:from-blue-900/30 group-hover:to-purple-900/30 transition-all">
+                <FaLocationArrow className="text-white text-xl group-hover:text-purple-300 transition-colors" />
+              </div>
+              <h3 className="text-xl font-semibold text-white">Location</h3>
+            </div>
+            <p className="text-gray-400 group-hover:text-white transition-colors">Bangalore, India</p>
+          </div>
+        </motion.div>
+
+        {/* Footer bottom - Clean with subtle accents */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ delay: 0.6, duration: 0.6 }}
+          className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-gray-800"
+        >
+          <p className="text-gray-500 mb-4 md:mb-0">
+            © {new Date().getFullYear()} Pavan Kumar R. All rights reserved.
+          </p>
+
+          <div className="flex gap-6">
+            <motion.a
+              whileHover={{ y: -3 }}
+              href="https://github.com/p-k-pavan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center border border-gray-700 hover:border-blue-400 transition-all hover:bg-gray-700/50"
+            >
+              <FaGithub className="text-gray-300 hover:text-white transition-colors" />
+            </motion.a>
+            <motion.a
+              whileHover={{ y: -3 }}
+              href="https://x.com/PKPAVANN"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center border border-gray-700 hover:border-purple-400 transition-all hover:bg-gray-700/50"
+            >
+              <FaXTwitter className="text-gray-300 hover:text-white transition-colors" />
+            </motion.a>
+            <motion.a
+              whileHover={{ y: -3 }}
+              href="https://linkedin.com/in/pkpavan"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center border border-gray-700 hover:border-blue-400 transition-all hover:bg-gray-700/50"
+            >
+              <FaLinkedinIn className="text-gray-300 hover:text-white transition-colors" />
+            </motion.a>
+          </div>
+        </motion.div>
       </div>
     </footer>
   );
