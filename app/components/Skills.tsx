@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const skillCategories = [
   {
@@ -116,13 +117,13 @@ const Skill = () => {
                       <div className="flex flex-col items-center text-center">
                         <div className="relative mb-4">
                           <div className="absolute inset-0 bg-purple-500 rounded-full opacity-0 group-hover:opacity-10 blur-md transition-opacity duration-300" />
-                          <img
+                          <Image
                             src={imgSrc}
                             alt={label}
                             className="w-12 h-12 object-contain transition-transform duration-300 group-hover:scale-110"
                           />
                         </div>
-
+                        
                         <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors">
                           {label}
                         </h3>

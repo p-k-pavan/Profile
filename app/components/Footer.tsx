@@ -2,7 +2,6 @@ import { FaLocationArrow, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import { FaXTwitter, FaGithub, FaLinkedinIn } from "react-icons/fa6";
 import MagicButton from "./ui/MagicButton";
 import { motion } from "framer-motion";
-import { Spotlight } from "./ui/Spotlight";
 
 const Footer = () => {
   return (

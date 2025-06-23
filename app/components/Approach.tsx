@@ -1,9 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaBrain, FaCode, FaRocket } from "react-icons/fa";
 import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
-import { Spotlight } from "./ui/Spotlight";
 
 const Approach = () => {
 

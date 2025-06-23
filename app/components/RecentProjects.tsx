@@ -1,8 +1,6 @@
 "use client";
-
+import Image from "next/image";
 import { FaLocationArrow } from "react-icons/fa6";
-
-// import { projects } from "@/data/index";
 import { PinContainer } from "./ui/PinContainer";
 import Link from "next/link"
 import { motion } from "framer-motion";
@@ -94,10 +92,10 @@ const RecentProjects = () => {
                   className="relative w-full h-full overflow-hidden lg:rounded-3xl"
                   style={{ backgroundColor: "#13162D" }}
                 >
-                  <img src="/bg.png" alt="bgimh" />
+                  <Image src="/bg.png" alt="bgimh" />
                 </div>
 
-                <img
+                <Image
                   src={item.img}
                   alt="cover"
                   className="z-10 absolute button-0"
@@ -127,7 +125,7 @@ const RecentProjects = () => {
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <img src={icon} alt="icon5" className="p-2" />
+                      <Image src={icon} alt="icon5" className="p-2" />
                     </div>
                   ))}
                 </div>

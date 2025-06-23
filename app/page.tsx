@@ -7,7 +7,6 @@ import RecentProjects from "./components/RecentProjects";
 import Approach from "./components/Approach";
 import Footer from "./components/Footer";
 import Skill from "./components/Skills";
-import { Spotlight } from "./components/ui/Spotlight";
 
 export default function Home() {
   return (
