@@ -6,8 +6,16 @@ import Link from "next/link"
 import { motion } from "framer-motion";
 
 export const projects = [
-  {
+    {
     id: 1,
+    title: " Namma Mart (E-Commerce Platform)",
+    des: "Built a full-stack e-commerce platform with a Next.js frontend and a Node.js + Express backend using TypeScript. Integrated Razorpay for secure online payments and order management. Implemented JWT authentication for secure user sessions and Redux for efficient state management. Designed a responsive UI using Tailwind CSS and ShadCN components. Added email verification via ZeroBounce API and OTP-based password recovery using Resend API.",
+    img: "/p1.png",
+    iconLists: ["/nextjs.png", "/redux.svg", "/razorpay.png", "/typescript.png", "/nodejs.png"],
+    link: "namma-mart.png",
+  },
+  {
+    id: 2,
     title: "Real Estate Web App (MERN Stack)",
     des: "A full-featured real estate platform built using MERN stack and Tailwind CSS. Enables users to manage property listings and contact landlords seamlessly.",
     img: "/estate.png",
@@ -15,7 +23,7 @@ export const projects = [
     link: "https://real-estate-zeta-dusky.vercel.app/",
   },
   {
-    id: 2,
+    id: 3,
     title: "Audio Deepfake Detection System",
     des: "An AI-powered system to detect deepfake audio using TensorFlow, Flask, and Python. Offers a React-based frontend for audio upload and real-time prediction.",
     img: "/add.png",
@@ -23,7 +31,7 @@ export const projects = [
     link: "https://audio-deepfake-detection-ui.vercel.app",
   },
   {
-    id: 3,
+    id: 4,
     title: "CI/CD Pipeline with ArgoCD on AWS EKS",
     des: "Implements a robust end-to-end CI/CD pipeline using Jenkins, Docker, Kubernetes (EKS), and ArgoCD, with integrated monitoring through Grafana.",
     img: "/end to end.gif",
@@ -31,7 +39,7 @@ export const projects = [
     link: "https://github.com/p-k-pavan/End-to-End-CI-CD-Pipeline-with-ArgoCD-on-AWS-EKS",
   },
   {
-    id: 4,
+    id: 5,
     title: "Blue-Green Deployment with Kubernetes",
     des: "A deployment strategy using Kubernetes, Git, Jenkins, and load balancer to ensure zero-downtime release with seamless traffic switching.",
     img: "/blue greem.webp",
@@ -39,21 +47,13 @@ export const projects = [
     link: "https://github.com/p-k-pavan/Blue-Green-Deployment-Strategy-with-Kubernetes",
   },
   {
-    id: 5,
+    id: 6,
     title: "3-Tier Architecture on AWS",
     des: "An AWS-based 3-tier architecture demonstrating Route 53, EC2, RDS, IAM, and CloudWatch for a scalable, secure, and observable web application setup.",
     img: "/3-tier aws.png",
     iconLists: ["/Route53.svg", "/aas.svg", "/RDS.svg", "/iam.svg", "/CloudWatch.svg"],
     link: "https://aws.amazon.com/",
-  },
-  {
-    id: 6,
-    title: "FusionMeet – Video Conferencing App",
-    des: "A modern video conferencing platform powered by ZegoCloud, Firebase, and Redux. Features real-time video, authentication, and responsive UI using Tailwind.",
-    img: "/p1.png",
-    iconLists: ["/tail.svg", "/redux.svg", "/firebase.svg", "/zegocloud.png", "/elasticui.svg"],
-    link: "https://fusion-meet.vercel.app/",
-  },
+  }
 ];
 
 
