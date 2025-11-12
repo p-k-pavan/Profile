@@ -10,7 +10,7 @@ export const projects = [
     id: 1,
     title: " Namma Mart (E-Commerce Platform)",
     des: "Built a full-stack e-commerce platform with a Next.js frontend and a Node.js + Express backend using TypeScript. Integrated Razorpay for secure online payments and order management. Implemented JWT authentication for secure user sessions and Redux for efficient state management. Designed a responsive UI using Tailwind CSS and ShadCN components. Added email verification via ZeroBounce API and OTP-based password recovery using Resend API.",
-    img: "/p1.png",
+    img: "/namma-mart.png",
     iconLists: ["/nextjs.png", "/redux.svg", "/razorpay.png", "/typescript.png", "/nodejs.png"],
     link: "namma-mart.png",
   },
