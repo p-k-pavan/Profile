@@ -7,6 +7,7 @@ import RecentProjects from "./components/RecentProjects";
 import Approach from "./components/Approach";
 import Footer from "./components/Footer";
 import Skill from "./components/Skills";
+import Experience from "./components/Experience";
 
 export default function Home() {
   return (
@@ -19,12 +20,15 @@ export default function Home() {
           navItems={[
             { name: "Home", link: "/" },
             { name: "About", link: "#about" },
+            {name: "Experience", link: "#experience" },
             { name: "Project", link: "#project" },
             { name: "Contact", link: "#contact" },
+            
           ]}
         />
         <Hero />
         <About /> 
+        <Experience />
         <RecentProjects />
         <Skill />
         <Approach />

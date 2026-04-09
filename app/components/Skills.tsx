@@ -121,6 +121,8 @@ const Skill = () => {
                             src={imgSrc}
                             alt={label}
                             className="w-12 h-12 object-contain transition-transform duration-300 group-hover:scale-110"
+                            width={12}
+                            height={12}
                           />
                         </div>
                         

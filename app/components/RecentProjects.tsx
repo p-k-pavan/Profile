@@ -1,8 +1,9 @@
 "use client";
+
 import Image from "next/image";
 import { FaLocationArrow } from "react-icons/fa6";
 import { PinContainer } from "./ui/PinContainer";
-import Link from "next/link"
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 export const projects = [
@@ -56,11 +57,9 @@ export const projects = [
   }
 ];
 
-
 const RecentProjects = () => {
   return (
-    <div className="py-10 " id="project">
-
+    <div className="py-10" id="project">
 
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/10 to-transparent"></div>
@@ -72,7 +71,7 @@ const RecentProjects = () => {
         transition={{ duration: 0.5 }}
         className="text-center mb-2"
       >
-        <h2 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-blue-400 to-purple-600 animate-gradient">
+        <h2 className="text-4xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-blue-400 to-purple-600">
           My Projects
         </h2>
         <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
@@ -81,58 +80,70 @@ const RecentProjects = () => {
       </motion.div>
 
       <div className="flex flex-wrap items-center justify-center p-4 gap-16">
-        {projects.map((item) => (
+        {projects.map((item:any) => (
           <div
             className="lg:min-h-[32.5rem] h-[25rem] flex items-center justify-center sm:w-96 w-[80vw]"
             key={item.id}
           >
-            <PinContainer title="vist" href="https://twitter.com">
+            <PinContainer title="visit" href={item.link}>
+              {/* Image Container */}
               <div className="relative flex items-center justify-center sm:w-96 w-[80vw] overflow-hidden h-[20vh] lg:h-[30vh] mb-10 bg-black">
-                <div
-                  className="relative w-full h-full overflow-hidden lg:rounded-3xl"
-                  style={{ backgroundColor: "#13162D" }}
-                >
-                  <Image src="/bg.png" alt="bgimh" />
+
+                {/* Background Image */}
+                <div className="relative w-full h-full overflow-hidden lg:rounded-3xl">
+                  <Image
+                    src="/bg.png"
+                    alt="bg"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
 
+                {/* Project Image */}
                 <Image
                   src={item.img}
                   alt="cover"
-                  className="z-10 absolute button-0"
+                  fill
+                  className="object-contain absolute bottom-0 z-10"
                 />
               </div>
-              <h1 className="lg:text-xl lg:font-normal font-light teaxt-sm line-clamp-2">
-                {" "}
+
+              {/* Title */}
+              <h1 className="lg:text-xl font-light text-sm line-clamp-2">
                 {item.title}
               </h1>
-              <p
-                className="lg:text-xl lg:font-normal font-light text-sm line-clamp-2"
-                style={{
-                  color: "#BEC1DD",
-                  margin: "1vh 0",
-                }}
-              >
+
+              {/* Description */}
+              <p className="lg:text-xl font-light text-sm line-clamp-2 text-[#BEC1DD] my-2">
                 {item.des}
               </p>
 
+              {/* Icons + Link */}
               <div className="flex items-center justify-between mt-7 mb-3">
                 <div className="flex items-center">
-                  {item.iconLists.map((icon, index) => (
+                  {item.iconLists.map((icon:any, index:any) => (
                     <div
                       key={index}
-                      className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                      className="relative border border-white/[.2] rounded-full bg-black w-8 h-8 lg:w-10 lg:h-10 flex justify-center items-center"
                       style={{
                         transform: `translateX(-${5 * index + 2}px)`,
                       }}
                     >
-                      <Image src={icon} alt="icon5" className="p-2" />
+                      {/* FIXED ICON IMAGE */}
+                      <Image
+                        src={icon}
+                        alt="icon"
+                        width={20}
+                        height={20}
+                        className="object-contain"
+                      />
                     </div>
                   ))}
                 </div>
 
-                <div className="flex justify-center items-center">
+                <div className="flex items-center">
                   <Link href={item.link}>
-                    <p className="flex lg:text-xl md:text-xs text-sm text-purple">
+                    <p className="flex lg:text-xl md:text-xs text-sm text-purple-400">
                       Check Live Site
                     </p>
                   </Link>

@@ -6,37 +6,37 @@ import { InfiniteMovingCards } from "./ui/infinite-moving-cards";
 const Approach = () => {
 
   const phases = [
-    {
-      quote:
-        "First, I understand the client's requirements and goals. I also study the target audience and decide which features the website needs. This helps me create a clear structure and plan.",
-      name: "Discovery Phase",
-      title: "Planning & Research",
-    },
-    {
-      quote:
-        "Once the plan is ready, I design the UI and start writing frontend and backend code using React and Node.js. I keep everything modular and follow best practices for clean code.",
-      name: "Design & Development",
-      title: "Frontend & Backend Setup",
-    },
-    {
-      quote:
-        "In this phase, I use GitHub for version control and create CI/CD pipelines using GitHub Actions. I also containerize the app using Docker to make deployment easy and consistent.",
-      name: "DevOps Integration",
-      title: "CI/CD & Docker",
-    },
-    {
-      quote:
-        "I host the application on cloud platforms like Vercel or AWS. I make sure everything works properly by testing and monitoring the application using basic tools.",
-      name: "Deployment",
-      title: "Hosting & Testing",
-    },
-    {
-      quote:
-        "After launching, I keep checking for performance and bugs. I also take user feedback and update the site accordingly. My goal is to keep improving and maintaining the project.",
-      name: "Post Launch",
-      title: "Monitoring & Maintenance",
-    },
-  ];
+  {
+    quote:
+      "I start by understanding your business goals, target users, and must-have features. You get a clear project scope, timeline, and tech plan before a single line of code is written — no surprises later.",
+    name: "Discovery Phase",
+    title: "Scope, Goals & Timeline",
+  },
+  {
+    quote:
+      "I design the UI in Figma and build the frontend with React/Next.js and Tailwind. You review and approve the design first. Backend APIs, database schema, and auth are set up in parallel using Node.js and MongoDB.",
+    name: "Design & Development",
+    title: "UI Design + Full Stack Build",
+  },
+  {
+    quote:
+      "Every code push is automatically tested and deployed via GitHub Actions CI/CD pipelines. The app is containerized with Docker so it runs identically in development, staging, and production — zero 'works on my machine' issues.",
+    name: "DevOps Integration",
+    title: "CI/CD, Docker & Automation",
+  },
+  {
+    quote:
+      "I deploy your app to AWS, Vercel, Hostinger, or GoDaddy — whichever fits your budget. Custom domain setup, SSL certificate, environment configuration, and a final end-to-end test are all included before handover.",
+    name: "Deployment",
+    title: "Live Hosting & Final QA",
+  },
+  {
+    quote:
+      "After launch I monitor uptime, performance, and errors using Grafana and Prometheus. Bug fixes, feature updates, and rate/content changes can be done with a single click or bulk upload — no developer needed for routine updates.",
+    name: "Post Launch",
+    title: "Monitoring, Fixes & Updates",
+  },
+];
 
 
   return (
@@ -61,7 +61,7 @@ const Approach = () => {
           My <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-blue-500">Development Process</span>
         </h1>
         <p className="text-gray-400 text-center max-w-2xl mx-auto mb-16">
-          A transparent, collaborative approach to building your perfect digital solution
+          From your first message to a live, monitored product — here's exactly how I work
         </p>
 
         <InfiniteMovingCards items={phases} direction="left" speed="normal" pauseOnHover={true} />
