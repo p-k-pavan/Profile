@@ -83,8 +83,7 @@ const experiences = [
 const stats = [
   { label: "Months experience", value: "11", gradient: "from-[#4F8EF7] to-[#6B6FF7]", glow: "rgba(79,142,247,0.2)" },
   { label: "Projects shipped", value: "7+", gradient: "from-[#A855F7] to-[#EC4899]", glow: "rgba(168,85,247,0.2)" },
-  { label: "Companies worked", value: "2", gradient: "from-[#06B6D4] to-[#10B981]", glow: "rgba(6,182,212,0.2)" },
-  { label: "Delivery time", value: "2–4 wks", gradient: "from-[#F59E0B] to-[#EF4444]", glow: "rgba(245,158,11,0.2)" },
+  { label: "Companies worked", value: "2", gradient: "from-[#06B6D4] to-[#10B981]", glow: "rgba(6,182,212,0.2)" }
 ];
 
 const Experience = () => {
