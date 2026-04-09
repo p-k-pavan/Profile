@@ -39,31 +39,32 @@ const Hero = () => {
           whileHover={{ scale: 1.05 }}
           className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center"
         >
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.5 }}
-            className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80 mb-4"
-          >
-            Building for the Future — Code, Deploy, Repeat
-          </motion.p>
+         <motion.p
+  initial={{ opacity: 0, y: 10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.2, duration: 0.5 }}
+  className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80 mb-4"
+>
+  Design → Build → Deploy → Scale
+</motion.p>
 
-          <TextGenerateEffect
-            className="text-center text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
-            words="Crafting Scalable Web Apps with a DevOps Mindset"
-          />
+<TextGenerateEffect
+  className="text-center text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+  words="Full Stack & DevOps Engineer — End to End, On Time."
+/>
 
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.5 }}
-            className="text-center md:tracking-wider my-6 text-sm md:text-lg lg:text-xl text-neutral-300 max-w-2xl"
-          >
-            Hi! I'm Pavan Kumar R, a final-year engineering student, passionate
-            about full-stack development and DevOps. I specialize in building
-            modern web applications and automating deployments to deliver smooth
-            and scalable digital experiences.
-          </motion.p>
+<motion.p
+  initial={{ opacity: 0, y: 10 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.4, duration: 0.5 }}
+  className="text-center md:tracking-wider my-6 text-sm md:text-lg lg:text-xl text-neutral-300 max-w-2xl"
+>
+  Hi, I'm Pavan Kumar R — a Full Stack Developer with hands-on experience 
+  building and shipping real-world applications using the MERN stack, cloud 
+  deployments on AWS, and automated CI/CD pipelines. I handle everything from 
+  UI design to hosting, so you get a complete product without managing 
+  multiple developers.
+</motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 10 }}
