@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 
 const experiences = [
@@ -31,7 +31,7 @@ const experiences = [
     id: 2,
     company: "Connectia",
     role: "Full Stack Developer",
-    duration: "8 months",
+    duration: "8.5 months",
     type: "Full-time",
     gradient: "from-[#A855F7] to-[#EC4899]",
     glowColor: "rgba(168,85,247,0.3)",
@@ -81,7 +81,7 @@ const experiences = [
 ];
 
 const stats = [
-  { label: "Months experience", value: "11", gradient: "from-[#4F8EF7] to-[#6B6FF7]", glow: "rgba(79,142,247,0.2)" },
+  { label: "Months experience", value: "12", gradient: "from-[#4F8EF7] to-[#6B6FF7]", glow: "rgba(79,142,247,0.2)" },
   { label: "Projects shipped", value: "7+", gradient: "from-[#A855F7] to-[#EC4899]", glow: "rgba(168,85,247,0.2)" },
   { label: "Companies worked", value: "2", gradient: "from-[#06B6D4] to-[#10B981]", glow: "rgba(6,182,212,0.2)" }
 ];
