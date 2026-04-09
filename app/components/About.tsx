@@ -2,7 +2,7 @@
 import { WobbleCard } from "./ui/WobbleCard";
 import React, { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
-import Lottie from "react-lottie";
+import Lottie from "lottie-react";
 import MagicButton from "./ui/MagicButton";
 import animationData from "@/data/confetti.json";
 
@@ -194,7 +194,7 @@ const About = () => {
           <div className="relative flex-shrink-0">
             {copied && (
               <div className="absolute -top-20 -right-10">
-                <Lottie options={defaultOptions} height={150} width={150} />
+                <Lottie animationData={animationData} loop={copied} autoplay={copied} style={{ height: 150, width: 150 }} />
               </div>
             )}
             <MagicButton
