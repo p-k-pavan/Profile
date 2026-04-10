@@ -132,17 +132,17 @@ const ServiceCard = ({
       {/* Glow layer */}
       <motion.div
         className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${card.gradient} blur-xl`}
-        animate={{ opacity: hovered ? 0.5 : 0.15, scale: hovered ? 1.06 : 1 }}
+        animate={{ opacity: hovered ? 0.12 : 0.05, scale: hovered ? 1.03 : 1 }}
         transition={{ duration: 0.4 }}
         style={{ zIndex: 0 }}
-      />
+       />
 
       {/* Gradient border shell */}
       <motion.div
-        animate={{ y: hovered ? -5 : 0 }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
-        className={`relative z-10 rounded-2xl bg-gradient-to-br ${card.gradient} p-[1.5px]`}
-      >
+       animate={{ y: hovered ? -3 : 0 }}
+       transition={{ duration: 0.3, ease: "easeOut" }}
+       className={`relative z-10 rounded-2xl bg-gradient-to-br ${card.gradient} p-[1px]`}
+        >
         {/* Inner dark card */}
         <div className="rounded-2xl bg-[#080810]/88 backdrop-blur-md p-5 flex flex-col gap-4 min-h-[220px]">
 
@@ -186,9 +186,9 @@ const ServiceCard = ({
           {/* Delivery */}
           <div className="flex items-center gap-2 pt-2 border-t border-white/[0.07]">
             <motion.div
-              animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
-              transition={{ duration: 2, repeat: Infinity, delay: index * 0.25 }}
-              className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"
+             animate={{ scale: [1, 1.4, 1], opacity: [0.8, 0.4, 0.8] }}
+             transition={{ duration: 3.5, repeat: Infinity, delay: index * 0.25 }}
+             className="w-1.5 h-1.5 rounded-full bg-emerald-400 flex-shrink-0"
             />
             <span className="text-[11px] text-white/35">
               Delivered in{" "}
@@ -217,9 +217,9 @@ const About = () => {
 
       {/* Ambient background blobs */}
       <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute top-10 left-1/4 w-80 h-80 rounded-full bg-purple-600/10 blur-[100px]" />
-        <div className="absolute bottom-10 right-1/4 w-96 h-96 rounded-full bg-blue-500/10 blur-[120px]" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-emerald-500/5 blur-[100px]" />
+        <div className="absolute top-10 left-1/4 w-80 h-80 rounded-full bg-purple-600/5 blur-[100px]" />
+        <div className="absolute bottom-10 right-1/4 w-96 h-96 rounded-full bg-blue-500/5 blur-[120px]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-emerald-500/3 blur-[100px]" />
       </div>
 
       <div className="max-w-7xl mx-auto">
@@ -267,7 +267,7 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-8 relative overflow-hidden rounded-2xl p-[1.5px] bg-gradient-to-r from-blue-500/40 via-purple-500/40 to-pink-500/40"
+          className="mt-8 relative overflow-hidden rounded-2xl p-[1px] bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20"
         >
           <div className="rounded-2xl bg-[#080810]/90 backdrop-blur-md px-6 py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
             <div>
