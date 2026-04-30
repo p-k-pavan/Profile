@@ -11,15 +11,15 @@ const Hero = () => {
     <div className="relative h-screen w-full overflow-hidden bg-black flex flex-col items-center justify-center">
       <div className="absolute inset-0 z-0">
         <Spotlight
-          className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
+          className="-top-40 -left-10 md:-left-32 md:-top-20 h-[120vh]"
           fill="white"
         />
         <Spotlight
-          className="absolute left-80 top-28 h-[80vh] w-[50vw]"
+          className="absolute left-80 top-28 h-[100vh] w-[50vw]"
           fill="purple"
         />
         <Spotlight
-          className="absolute right-80 top-28 h-[80vh] w-[50vw]"
+          className="absolute right-80 top-28 h-[100vh] w-[30vw]"
           fill="blue"
         />
 
@@ -39,32 +39,28 @@ const Hero = () => {
           whileHover={{ scale: 1.05 }}
           className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center"
         >
-         <motion.p
-  initial={{ opacity: 0, y: 10 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.2, duration: 0.5 }}
-  className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80 mb-4"
->
-  Design → Build → Deploy → Scale
-</motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+            className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80 mb-4"
+          >
+            MERN · Next.js · AWS · Real-time Systems
+          </motion.p>
 
-<TextGenerateEffect
-  className="text-center text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
-  words="Full Stack & DevOps Engineer — End to End, On Time."
-/>
+          <TextGenerateEffect
+            className="text-center text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+            words="Pavan Kumar R — Full Stack Developer."
+          />
 
-<motion.p
-  initial={{ opacity: 0, y: 10 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.4, duration: 0.5 }}
-  className="text-center md:tracking-wider my-6 text-sm md:text-lg lg:text-xl text-neutral-300 max-w-2xl"
->
-  Hi, I'm Pavan Kumar R — a Full Stack Developer with hands-on experience 
-  building and shipping real-world applications using the MERN stack, cloud 
-  deployments on AWS, and automated CI/CD pipelines. I handle everything from 
-  UI design to hosting, so you get a complete product without managing 
-  multiple developers.
-</motion.p>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+            className="text-center md:tracking-wider my-6 text-sm md:text-lg lg:text-xl text-neutral-300 max-w-2xl"
+          >
+            Building production-grade systems that scale to 5K+ users. From real-time ERP platforms to multi-site CMS architectures — turning complex requirements into elegant, performant solutions.
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 10 }}

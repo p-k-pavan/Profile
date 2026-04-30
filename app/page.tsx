@@ -2,36 +2,39 @@
 
 import Hero from "./components/Hero";
 import { FloatingNav } from "./components/ui/FloatingNavbar";
-import About from "./components/About"; 
-import RecentProjects from "./components/RecentProjects";
 import Approach from "./components/Approach";
 import Footer from "./components/Footer";
-import Skill from "./components/Skills";
-import Experience from "./components/Experience";
+import { Skills } from "./components/Skills";
+import { Experience } from "./components/Experience";
+import { Projects } from "./components/RecentProjects";
+import { Education } from "./components/Eduction";
+import { CustomCursor } from "./components/ui/CustomCursor";
 
 export default function Home() {
   return (
     <div className="bg-black w-screen max-w-full overflow-hidden relative">
-    
-      
+
+      <CustomCursor />
 
       <div className="relative z-10">
         <FloatingNav
           navItems={[
             { name: "Home", link: "/" },
-            { name: "About", link: "#about" },
-            {name: "Experience", link: "#experience" },
-            { name: "Project", link: "#project" },
+            { name: "Projects", link: "#projects" },
+            { name: "Skills", link: "#skills" },
+            { name: "Experience", link: "#experience" },
+
+            { name: "Education", link: "#education" },
             { name: "Contact", link: "#contact" },
-            
+
           ]}
         />
         <Hero />
-        <About /> 
+        <Projects />
+        <Skills />
         <Experience />
-        <RecentProjects />
-        <Skill />
-        <Approach />
+        <Education />
+        {/* <Approach /> */}
         <Footer />
       </div>
     </div>

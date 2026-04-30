@@ -1,162 +1,168 @@
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { motion } from 'motion/react';
+import { Zap, Palette, Wrench, Cloud, Database, Rocket } from 'lucide-react';
 
 const skillCategories = [
   {
-    title: "Frontend Development",
+    name: 'Languages',
+    icon: Zap,
+    color: 'cyan',
     skills: [
-      { imgSrc: '/js.svg', label: 'JavaScript', desc: 'Programming Language' },
-      { imgSrc: '/ts.svg', label: 'TypeScript', desc: 'Typed JavaScript' },
-      { imgSrc: '/re.svg', label: 'React', desc: 'Frontend Library' },
-      { imgSrc: '/next.js.svg', label: 'Next.js', desc: 'React Framework' },
-      { imgSrc: '/redux.svg', label: 'Redux', desc: 'State Management' },
-      { imgSrc: '/css3.svg', label: 'CSS', desc: 'Styling Language' },
-      { imgSrc: '/tailwind.svg', label: 'TailwindCSS', desc: 'CSS Framework' },
-      { imgSrc: '/aceternity.png', label: 'AceternityUI', desc: 'UI Components' }
-    ]
+      { name: 'JavaScript', highlight: true },
+      { name: 'TypeScript', highlight: true },
+      { name: 'Python', highlight: false },
+      { name: 'HTML', highlight: false },
+      { name: 'CSS', highlight: false },
+    ],
   },
   {
-    title: "Backend & Databases",
+    name: 'Frontend',
+    icon: Palette,
+    color: 'purple',
     skills: [
-      { imgSrc: '/nodejs.svg', label: 'NodeJS', desc: 'Backend Runtime' },
-      { imgSrc: '/express.svg', label: 'ExpressJS', desc: 'Node.js Framework' },
-      { imgSrc: '/mongodb.svg', label: 'MongoDB', desc: 'NoSQL Database' },
-      { imgSrc: '/firebase.svg', label: 'Firebase', desc: 'Backend Service' },
-      { imgSrc: '/appwrite.svg', label: 'Appwrite', desc: 'Backend Server' },
-      { imgSrc: '/passport.png', label: 'Passport', desc: 'Authentication' }
-    ]
+      { name: 'React.js', highlight: true },
+      { name: 'Next.js', highlight: true },
+      { name: 'Redux Toolkit', highlight: false },
+      { name: 'Tailwind CSS', highlight: false },
+      { name: 'ShadCN UI', highlight: false },
+      { name: 'Chakra UI', highlight: false },
+      { name: 'Cloudinary', highlight: false },
+    ],
   },
   {
-    title: "DevOps & Cloud",
+    name: 'Backend',
+    icon: Wrench,
+    color: 'emerald',
     skills: [
-      { imgSrc: '/docker.svg', label: 'Docker', desc: 'Containerization' },
-      { imgSrc: '/kubernetes.svg', label: 'Kubernetes', desc: 'Orchestration' },
-      { imgSrc: '/AWS.svg', label: 'AWS', desc: 'Cloud Platform' },
-      { imgSrc: '/Terraform.svg', label: 'Terraform', desc: 'IaC' },
-      { imgSrc: '/Ansible.svg', label: 'Ansible', desc: 'Automation' },
-      { imgSrc: '/NGINX.svg', label: 'Nginx', desc: 'Web Server' },
-      { imgSrc: '/jenkins.svg', label: 'Jenkins', desc: 'CI/CD' },
-      { imgSrc: '/Argo CD.svg', label: 'ArgoCD', desc: 'GitOps' }
-    ]
+      { name: 'Node.js', highlight: true },
+      { name: 'Express.js', highlight: true },
+      { name: 'Socket.io', highlight: false },
+      { name: 'WebSockets', highlight: false },
+      { name: 'RESTful APIs', highlight: false },
+      { name: 'Flask', highlight: false },
+      { name: 'Multer', highlight: false },
+    ],
   },
   {
-    title: "Monitoring & Security",
+    name: 'Cloud & Infra',
+    icon: Cloud,
+    color: 'amber',
     skills: [
-      { imgSrc: '/Grafana.png', label: 'Grafana', desc: 'Dashboards' },
-      { imgSrc: '/Prometheus.png', label: 'Prometheus', desc: 'Metrics' },
-      { imgSrc: '/sonarqube.svg', label: 'SonarQube', desc: 'Code Quality' },
-      { imgSrc: '/trivy.svg', label: 'Trivy', desc: 'Security Scanner' },
-      { imgSrc: '/owasp.svg', label: 'OWASP', desc: 'Security Standards' }
-    ]
+      { name: 'AWS EC2', highlight: true },
+      { name: 'AWS S3', highlight: true },
+      { name: 'CloudFront', highlight: false },
+      { name: 'Route 53', highlight: false },
+      { name: 'RDS', highlight: false },
+      { name: 'IAM / VPC', highlight: false },
+      { name: 'ALB / ASG', highlight: false },
+      { name: 'CloudWatch', highlight: false },
+      { name: 'SNS', highlight: false },
+      { name: 'EFS', highlight: false },
+      { name: 'Terraform', highlight: false },
+      { name: 'Ansible', highlight: false },
+    ],
   },
   {
-    title: "Tools & Platforms",
+    name: 'Databases',
+    icon: Database,
+    color: 'red',
     skills: [
-      { imgSrc: '/Git.png', label: 'Git', desc: 'Version Control' },
-      { imgSrc: '/GitHub.svg', label: 'GitHub Actions', desc: 'CI/CD' },
-      { imgSrc: '/Linux.svg', label: 'Linux', desc: 'OS' },
-      { imgSrc: '/zegocloud.png', label: 'Zegocloud', desc: 'Video API' }
-    ]
-  }
+      { name: 'MongoDB', highlight: true },
+      { name: 'Redis', highlight: true },
+      { name: 'Mongoose', highlight: false },
+    ],
+  },
+  {
+    name: 'DevOps & Tools',
+    icon: Rocket,
+    color: 'cyan',
+    skills: [
+      { name: 'Docker', highlight: true },
+      { name: 'GitHub Actions', highlight: false },
+      { name: 'Nginx', highlight: false },
+      { name: 'PM2', highlight: false },
+      { name: 'Linux CLI', highlight: false },
+      { name: 'Git', highlight: false },
+      { name: 'Postman', highlight: false },
+      { name: 'Firebase Auth', highlight: false },
+      { name: 'Auth.js', highlight: false },
+      { name: 'JWT', highlight: false },
+    ],
+  },
 ];
 
-const Skill = () => {
+export function Skills() {
   return (
-    <section className="relative py-20 overflow-hidden bg-gradient-to-b from-gray-900 via-transparent to-gray-950">
+   <section id="skills" className="py-20 lg:py-32 relative overflow-hidden">
 
-      <div className="absolute inset-0 -z-10 opacity-20">
-        <div className="absolute inset-0 bg-[url('/grid.svg')]" />
-        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/20 via-transparent to-blue-900/20" />
-      </div>
+  {/* Background glow */}
+  <div className="absolute inset-0 -z-10">
+    <div className="absolute top-[-200px] left-[-150px] w-[400px] h-[400px] bg-purple-500 opacity-20 blur-[120px] rounded-full"></div>
+    <div className="absolute bottom-[-200px] right-[-150px] w-[400px] h-[400px] bg-blue-500 opacity-20 blur-[120px] rounded-full"></div>
+    <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 via-transparent to-blue-900/10" />
+  </div>
 
-      <div className="px-4 mx-auto max-w-7xl">
+  <div className="max-w-7xl mx-auto px-6 lg:px-12">
+
+    {/* Header */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7 }}
+      className="text-center mb-16"
+    >
+      <span className="font-mono text-xs text-blue-300 tracking-widest uppercase block mb-4">
+        02 · Skills
+      </span>
+      <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+        Tech Arsenal
+      </h2>
+      <div className="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto" />
+    </motion.div>
+
+    {/* Grid */}
+    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      {skillCategories.map((category, idx) => (
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          key={category.name}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          transition={{ delay: idx * 0.1 }}
+          
+          /* 🔥 GLASS CARD */
+          className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl p-7 transition-all duration-300 hover:border-blue-400/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]"
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-blue-400 to-purple-600 animate-gradient">
-            My Technical Expertise
-          </h2>
-          <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
-            Organized by technology domains with modern tooling
-          </p>
-        </motion.div>
 
-        <div className="space-y-12">
-          {skillCategories.map((category, catIndex) => (
-            <motion.div
-              key={catIndex}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: catIndex * 0.1 }}
-              viewport={{ once: true }}
-              className="group"
-            >
-              <h3 className="text-xl font-semibold mb-8 text-center flex items-center justify-center w-full">
-  <span className="flex-grow h-px bg-gradient-to-r from-purple-500 to-blue-500 max-w-[300px] sm:max-w-[350px] mr-3" />
-  <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 to-blue-400 text-base sm:text-lg md:text-xl">
-    {category.title}
-  </span>
-  <span className="flex-grow h-px bg-gradient-to-r from-blue-500 to-purple-500 max-w-[300px] sm:max-w-[350px] ml-3" />
-</h3>
-
-
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                {category.skills.map(({ imgSrc, label, desc }, skillIndex) => (
-                  <motion.div
-                    key={skillIndex}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.3, delay: skillIndex * 0.05 }}
-                    viewport={{ once: true }}
-                    className="group relative"
-                  >
-                    <div className="h-full bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-lg p-4 transition-all duration-300 hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/10 hover:-translate-y-1">
-                      <div className="flex flex-col items-center text-center">
-                        <div className="relative mb-4">
-                          <div className="absolute inset-0 bg-purple-500 rounded-full opacity-0 group-hover:opacity-10 blur-md transition-opacity duration-300" />
-                          <Image
-                            src={imgSrc}
-                            alt={label}
-                            className="w-12 h-12 object-contain transition-transform duration-300 group-hover:scale-110"
-                            width={12}
-                            height={12}
-                          />
-                        </div>
-                        
-                        <h3 className="text-base font-medium text-gray-200 group-hover:text-white transition-colors">
-                          {label}
-                        </h3>
-
-                        <p className="text-xs text-gray-400 mt-1">{desc}</p>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Continuous learning badge */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-          className="mt-20 text-center"
-        >
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gray-800/70 border border-gray-700 text-gray-300 text-sm backdrop-blur-sm">
-            <svg className="w-4 h-4 mr-2 text-purple-400 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
-              <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
-            Continuously expanding my technical toolkit
+          {/* Header */}
+          <div className="flex items-center gap-3 mb-6">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-white/10">
+              <category.icon className="w-5 h-5 text-blue-300" />
+            </div>
+            <span className="font-semibold text-white">{category.name}</span>
           </div>
-        </motion.div>
-      </div>
-    </section>
-  );
-};
 
-export default Skill;
+          {/* Skills */}
+          <div className="flex flex-wrap gap-2">
+            {category.skills.map((skill) => (
+              <motion.span
+                key={skill.name}
+                whileHover={{ y: -2 }}
+                className={`text-xs px-3 py-1.5 rounded border transition-all duration-300 ${
+                  skill.highlight
+                    ? 'border-blue-400/30 text-blue-300 bg-blue-400/5'
+                    : 'border-white/10 text-gray-400 bg-white/5'
+                }`}
+              >
+                {skill.name}
+              </motion.span>
+            ))}
+          </div>
+
+        </motion.div>
+      ))}
+
+    </div>
+  </div>
+</section>
+  );
+}

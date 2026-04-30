@@ -129,7 +129,7 @@ const ServiceCard = ({
       className="relative group cursor-default"
       style={{ willChange: "transform" }}
     >
-      {/* Glow layer */}
+
       <motion.div
         className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${card.gradient} blur-xl`}
         animate={{ opacity: hovered ? 0.5 : 0.15, scale: hovered ? 1.06 : 1 }}
@@ -137,16 +137,14 @@ const ServiceCard = ({
         style={{ zIndex: 0 }}
       />
 
-      {/* Gradient border shell */}
+
       <motion.div
         animate={{ y: hovered ? -5 : 0 }}
         transition={{ duration: 0.3, ease: "easeOut" }}
         className={`relative z-10 rounded-2xl bg-gradient-to-br ${card.gradient} p-[1.5px]`}
       >
-        {/* Inner dark card */}
         <div className="rounded-2xl bg-[#080810]/88 backdrop-blur-md p-5 flex flex-col gap-4 min-h-[220px]">
 
-          {/* Top: icon + phase */}
           <div className="flex items-start justify-between">
             <motion.div
               animate={{ rotate: hovered ? 8 : 0, scale: hovered ? 1.1 : 1 }}
@@ -160,7 +158,6 @@ const ServiceCard = ({
             </span>
           </div>
 
-          {/* Title + description */}
           <div>
             <h3 className="text-white font-bold text-[15px] leading-snug mb-1.5">
               {card.title}
@@ -170,7 +167,6 @@ const ServiceCard = ({
             </p>
           </div>
 
-          {/* Tags */}
           <div className="flex flex-wrap gap-1.5 mt-auto">
             {card.tags.map((tag) => (
               <span
@@ -183,7 +179,6 @@ const ServiceCard = ({
             ))}
           </div>
 
-          {/* Delivery */}
           <div className="flex items-center gap-2 pt-2 border-t border-white/[0.07]">
             <motion.div
               animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
@@ -215,7 +210,6 @@ const About = () => {
   return (
     <section id="about" className="relative py-16 px-4 md:px-12 w-full overflow-hidden">
 
-      {/* Ambient background blobs */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute top-10 left-1/4 w-80 h-80 rounded-full bg-purple-600/10 blur-[100px]" />
         <div className="absolute bottom-10 right-1/4 w-96 h-96 rounded-full bg-blue-500/10 blur-[120px]" />
@@ -224,7 +218,6 @@ const About = () => {
 
       <div className="max-w-7xl mx-auto">
 
-        {/* Heading */}
         <motion.div
           ref={headingRef}
           initial={{ opacity: 0, y: 24 }}
@@ -254,14 +247,12 @@ const About = () => {
           </p>
         </motion.div>
 
-        {/* Cards grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {cardData.map((card, i) => (
             <ServiceCard key={card.id} card={card} index={i} />
           ))}
         </div>
 
-        {/* CTA Banner */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

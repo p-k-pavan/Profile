@@ -1,269 +1,136 @@
-"use client";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion } from 'motion/react';
 
 const experiences = [
   {
-    id: 1,
-    company: "Moriphius AI",
-    role: "Software Engineer Intern",
-    duration: "3 months",
-    type: "Internship",
-    gradient: "from-[#4F8EF7] to-[#6B6FF7]",
-    glowColor: "rgba(79,142,247,0.3)",
-    dotColor: "#4F8EF7",
-    typeBg: "bg-blue-500/15 text-blue-400 border border-blue-500/25",
-    durationBg: "bg-white/5 text-neutral-400",
-    initial: "M",
-    projects: [
-      {
-        name: "OBS Streaming Pipeline",
-        accent: "from-[#4F8EF7] to-[#9B6BF7]",
-        leftBorder: "border-l-blue-500",
-        tagBg: "bg-blue-500/10 text-blue-300 border border-blue-500/20",
-        description:
-          "Built and integrated a video/audio streaming pipeline using AWS media services for OBS-based live streaming projects. Worked on real-time media delivery infrastructure to ensure low-latency, high-quality streams at scale.",
-        tags: ["AWS", "OBS", "Video Streaming", "Media Pipeline"],
-      },
+    date: '06/2025 – 08/2025 · Bangalore',
+    role: 'Full Stack Intern',
+    company: 'Morphius AI',
+    companyUrl: 'https://www.morphius.in',
+    points: [
+      'Architected and launched **TradeShow**, a real-time product showcase platform with live streaming, dynamic banners, and targeted in-app promotions for live trade events.',
+      'Built event-driven UI systems in **React.js** with live product updates, animated displays, and promotional overlays — improving session retention.',
+      'Integrated **AWS OBS** for scalable media storage and low-latency content delivery; developed fullstack features using Node.js and Express.js.',
     ],
   },
   {
-    id: 2,
-    company: "Connectia",
-    role: "Full Stack Developer",
-    duration: "8.5 months",
-    type: "Full-time",
-    gradient: "from-[#A855F7] to-[#EC4899]",
-    glowColor: "rgba(168,85,247,0.3)",
-    dotColor: "#A855F7",
-    typeBg: "bg-purple-500/15 text-purple-400 border border-purple-500/25",
-    durationBg: "bg-white/5 text-neutral-400",
-    initial: "C",
-    projects: [
-      {
-        name: "Soul Dune — Tour Booking Platform",
-        accent: "from-[#F59E0B] to-[#EF4444]",
-        leftBorder: "border-l-amber-500",
-        tagBg: "bg-amber-500/10 text-amber-300 border border-amber-500/20",
-        description:
-          "Built a complete tour booking platform from scratch. Integrated Telr payment gateway for secure online bookings, implemented JWT authentication and Redux state management. Delivered both a customer-facing booking interface and a full admin dashboard for managing tours and reservations.",
-        tags: ["MERN Stack", "Redux", "JWT", "Telr Payments", "Admin Dashboard"],
-      },
-      {
-        name: "Carat Years — Diamond Jewellery Platform",
-        accent: "from-[#06B6D4] to-[#10B981]",
-        leftBorder: "border-l-cyan-500",
-        tagBg: "bg-cyan-500/10 text-cyan-300 border border-cyan-500/20",
-        description:
-          "Migrated the entire application from a company server to AWS. Redesigned the UI and built a dynamic price calculator — same product shows different pricing based on carat weight and diamond shape. Added single-click rate updates and bulk product upload via Excel-to-JSON conversion.",
-        tags: ["AWS Migration", "MERN Stack", "Dynamic Pricing", "Excel/JSON", "UI Design"],
-      },
-      {
-        name: "NBTC — Multi-site Platform Upgrade",
-        accent: "from-[#10B981] to-[#6366F1]",
-        leftBorder: "border-l-emerald-500",
-        tagBg: "bg-emerald-500/10 text-emerald-300 border border-emerald-500/20",
-        description:
-          "Upgraded the platform from v2 to v5. Reworked the codebase to fix broken functionality, rebuilt the admin dashboard to manage 1 main site and 7 sub-sites from a single control panel — eliminating the need to switch between multiple admin panels.",
-        tags: ["MERN Stack", "v2 → v5 Migration", "Multi-site", "Admin Dashboard"],
-      },
-      {
-        name: "Lezzgo — Social Meetup App",
-        accent: "from-[#EF4444] to-[#EC4899]",
-        leftBorder: "border-l-rose-500",
-        tagBg: "bg-rose-500/10 text-rose-300 border border-rose-500/20",
-        description:
-          "Built the backend for a meetup planning app featuring live location tracking once a meetup starts, in-app chat, expense calculator, and user invitations. After meetup completion, the event converts into a social feed post where other users can like and comment.",
-        tags: ["Node.js", "Socket.io", "Live Tracking", "Real-time Chat", "REST APIs"],
-      },
+    date: '08/2025 – 04/2026 · Bangalore',
+    role: 'Full Stack Developer',
+    company: 'Connectia Technology',
+    companyUrl: 'https://connectiainfotech.in',
+    points: [
+      '**Carat Years:** Engineered a diamond factory ERP with a real-time auto-pricing engine based on carat, shape, and live metal rates via external APIs — eliminating manual price updates and improving accuracy.',
+      'Built a high-volume Excel-to-JSON data pipeline with validation, transformation, and error reporting — processing 500+ records per upload with multi-variant product structures.',
+      'Led AWS cloud migration with zero downtime and delivered frontend performance optimizations, ensuring seamless production availability.',
+      '**NBTC Multi-Site CMS:** Built a no-code, template-driven platform managing 8 websites, enabling non-technical users to create and publish sites independently.',
+      'Implemented **Redux** for state management, reduced redundant API calls, and introduced lazy loading — improving page load time by ~35–45%.',
+      'Developed a fully API-driven CMS with dynamic content and high-quality media handling — zero hardcoded data.',
+      '**LezzGo:** Engineered a real-time meetup platform handling 5K+ users with live location tracking and **Socket.io**-based communication.',
+      'Built social features with full CRUD operations, personalized feeds, automated notifications, and group expense management.',
     ],
   },
 ];
 
-const stats = [
-  { label: "Months experience", value: "12", gradient: "from-[#4F8EF7] to-[#6B6FF7]", glow: "rgba(79,142,247,0.2)" },
-  { label: "Projects shipped", value: "7+", gradient: "from-[#A855F7] to-[#EC4899]", glow: "rgba(168,85,247,0.2)" },
-  { label: "Companies worked", value: "2", gradient: "from-[#06B6D4] to-[#10B981]", glow: "rgba(6,182,212,0.2)" }
-];
-
-const Experience = () => {
-  const [expanded, setExpanded] = useState<Record<number, boolean>>({ 1: true, 2: true });
-
-  const toggle = (id: number) =>
-    setExpanded((prev) => ({ ...prev, [id]: !prev[id] }));
-
+export function Experience() {
   return (
-    <section id="experience" className="relative p-4 md:p-12 w-full overflow-hidden">
+    <section id="experience" className="py-20 lg:py-32 relative overflow-hidden">
 
-      {/* Ambient blobs */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/3 w-72 h-72 rounded-full bg-blue-600/8 blur-[100px]" />
-        <div className="absolute bottom-0 right-1/4 w-80 h-80 rounded-full bg-purple-600/8 blur-[110px]" />
+      {/* Background glow */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-[-200px] left-[-150px] w-[400px] h-[400px] bg-purple-500 opacity-20 blur-[120px] rounded-full"></div>
+        <div className="absolute bottom-[-200px] right-[-150px] w-[400px] h-[400px] bg-blue-500 opacity-20 blur-[120px] rounded-full"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-purple-900/10 via-transparent to-blue-900/10" />
       </div>
 
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
-        {/* Heading */}
+        {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mb-10 text-center"
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16"
         >
-          <span className="inline-block text-[11px] font-bold tracking-[0.2em] uppercase text-purple-400 mb-3 px-4 py-1.5 rounded-full border border-purple-400/25 bg-purple-400/5">
-            Where I've worked
+          <span className="font-mono text-xs text-blue-300 tracking-widest uppercase block mb-4">
+            03 · Experience
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-            Professional{" "}
-            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-              Experience
-            </span>
+          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-4">
+            Work History
           </h2>
-          <p className="text-neutral-400 text-sm">
-            11 months of professional experience · 7+ production projects shipped
-          </p>
+          <div className="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto" />
         </motion.div>
 
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical gradient line */}
-          <div
-            className="absolute left-4 top-0 bottom-0 w-px hidden md:block"
-            style={{ background: "linear-gradient(to bottom, #4F8EF7, #A855F7, #10B981)" }}
-          />
+        <div className="relative max-w-4xl mx-auto">
 
-          <div className="flex flex-col gap-10">
+          {/* Timeline line (softened) */}
+          <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-blue-400/50 via-purple-500/40 to-transparent" />
+
+          <div className="space-y-12">
+
             {experiences.map((exp, idx) => (
               <motion.div
-                key={exp.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                className="md:pl-12 relative"
+                key={idx}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ delay: idx * 0.2 }}
+                className="relative pl-12"
               >
-                {/* Glowing timeline dot */}
-                <div
-                  className="absolute left-[7px] top-3 w-4 h-4 rounded-full hidden md:block"
-                  style={{
-                    background: exp.dotColor,
-                    boxShadow: `0 0 10px 3px ${exp.glowColor}`,
-                    border: "2px solid #080810",
-                  }}
+
+                {/* Dot */}
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ delay: idx * 0.2 + 0.2 }}
+                  className="absolute -left-1.5 top-1 w-3 h-3 bg-blue-400 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)]"
                 />
 
-                {/* Company header button */}
-                <button onClick={() => toggle(exp.id)} className="w-full text-left mb-4 group">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
-                    <div className="flex items-center gap-3">
-                      {/* Gradient avatar */}
-                      <div
-                        className={`w-10 h-10 rounded-xl bg-gradient-to-br ${exp.gradient} flex items-center justify-center text-white font-bold text-sm flex-shrink-0 shadow-lg`}
-                        style={{ boxShadow: `0 4px 14px ${exp.glowColor}` }}
-                      >
-                        {exp.initial}
-                      </div>
-                      <div>
-                        <h3 className="text-white font-semibold text-base leading-tight">
-                          {exp.company}
-                        </h3>
-                        <p className="text-neutral-400 text-xs">{exp.role}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2 ml-[52px] sm:ml-0">
-                      <span className={`text-[11px] font-semibold px-3 py-1 rounded-full ${exp.typeBg}`}>
-                        {exp.type}
-                      </span>
-                      <span className={`text-[11px] px-3 py-1 rounded-full ${exp.durationBg}`}>
-                        {exp.duration}
-                      </span>
-                      <span className="text-neutral-500 text-xs transition-transform duration-200 group-hover:scale-110">
-                        {expanded[exp.id] ? "▲" : "▼"}
-                      </span>
-                    </div>
-                  </div>
-                </button>
+                {/* Glass Card */}
+                <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl p-6 transition-all duration-300 hover:border-blue-400/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]">
 
-                {/* Project cards */}
-                {expanded[exp.id] && (
-                  <div className="flex flex-col gap-3">
-                    {exp.projects.map((project, pIdx) => (
-                      <motion.div
+                  <div className="text-xs text-purple-300 mb-2 font-mono">
+                    {exp.date}
+                  </div>
+
+                  <h3 className="text-xl font-bold text-white mb-1">
+                    {exp.role}
+                  </h3>
+
+                  {exp.companyUrl ? (
+                    <a
+                      href={exp.companyUrl}
+                      target="_blank"
+                      className="text-blue-400 hover:underline inline-flex items-center gap-1 mb-4"
+                    >
+                      {exp.company} ↗
+                    </a>
+                  ) : (
+                    <div className="text-blue-400 mb-4">{exp.company}</div>
+                  )}
+
+                  <ul className="space-y-3">
+                    {exp.points.map((point, pIdx) => (
+                      <motion.li
                         key={pIdx}
-                        initial={{ opacity: 0, y: 8 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: pIdx * 0.06 }}
-                        className={`relative bg-white/[0.04] border border-white/10 border-l-2 ${project.leftBorder} rounded-xl p-4 flex flex-col gap-3 hover:bg-white/[0.07] transition-colors duration-200 overflow-hidden`}
-                      >
-                        {/* Subtle top gradient shine */}
-                        <div
-                          className={`absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r ${project.accent} opacity-60`}
-                        />
-
-                        {/* Project name with gradient */}
-                        <p className={`text-sm font-semibold bg-gradient-to-r ${project.accent} bg-clip-text text-transparent`}>
-                          {project.name}
-                        </p>
-                        <p className="text-neutral-400 text-xs leading-relaxed">
-                          {project.description}
-                        </p>
-                        <div className="flex flex-wrap gap-1.5">
-                          {project.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className={`text-[10px] font-medium px-2 py-1 rounded-md ${project.tagBg}`}
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      </motion.div>
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: idx * 0.2 + pIdx * 0.1 }}
+                        className="text-sm text-gray-400 leading-relaxed pl-4 relative before:content-['▸'] before:absolute before:left-0 before:text-blue-400 before:text-xs before:top-1"
+                        dangerouslySetInnerHTML={{
+                          __html: point.replace(
+                            /\*\*(.*?)\*\*/g,
+                            '<strong class="text-white">$1</strong>'
+                          ),
+                        }}
+                      />
                     ))}
-                  </div>
-                )}
+                  </ul>
+
+                </div>
               </motion.div>
             ))}
+
           </div>
         </div>
-
-        {/* Stats row */}
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3"
-        >
-          {stats.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.4, delay: i * 0.07 }}
-              viewport={{ once: true }}
-              className="relative rounded-xl p-[1px] overflow-hidden"
-              style={{ background: `linear-gradient(135deg, ${stat.glow}, transparent)` }}
-            >
-              <div
-                className={`relative rounded-xl bg-gradient-to-br ${stat.gradient} p-[1px]`}
-              >
-                <div className="rounded-xl bg-[#080810]/90 p-4 text-center">
-                  <p
-                    className={`text-2xl font-bold bg-gradient-to-r ${stat.gradient} bg-clip-text text-transparent`}
-                  >
-                    {stat.value}
-                  </p>
-                  <p className="text-neutral-400 text-xs mt-1">{stat.label}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
       </div>
     </section>
   );
-};
-
-export default Experience;
+}
