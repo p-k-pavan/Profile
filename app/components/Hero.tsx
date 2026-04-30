@@ -68,7 +68,7 @@ const Hero = () => {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="flex flex-col md:flex-row gap-4 items-center"
           >
-            <a href="#project">
+            <a href="#projects">
               <MagicButton
                 title="Explore My Work"
                 icon={<FaLocationArrow />}
