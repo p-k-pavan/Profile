@@ -72,7 +72,6 @@ export function Projects() {
   id="projects"
   className="py-20 lg:py-32 relative z-10 bg-black overflow-hidden"
 >
-  {/* Background glow (same feel as hero) */}
   <div className="absolute inset-0 -z-10">
     <div className="absolute top-[-200px] right-[-150px] w-[400px] h-[400px] bg-purple-500 opacity-20 blur-[120px] rounded-full"></div>
     <div className="absolute bottom-[-200px] left-[-150px] w-[400px] h-[400px] bg-blue-500 opacity-20 blur-[120px] rounded-full"></div>
@@ -80,7 +79,6 @@ export function Projects() {
 
   <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
-    {/* Header */}
     <div className="text-center mb-16">
       <span className="font-mono text-xs text-blue-300 tracking-widest uppercase block mb-4">
         01 · Projects
@@ -91,7 +89,6 @@ export function Projects() {
       <div className="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto" />
     </div>
 
-    {/* GRID FIX */}
     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 
       {projects.map((project, idx) => (
@@ -103,15 +100,12 @@ export function Projects() {
           `}
         >
 
-          {/* Top gradient line */}
           <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-blue-400 to-purple-500 opacity-0 group-hover:opacity-100 transition" />
 
-          {/* Icon */}
           <div className="absolute top-6 right-6 opacity-20 group-hover:opacity-40 transition">
             <project.icon className="w-10 h-10 text-blue-400" />
           </div>
 
-          {/* LEFT */}
           <div>
             <div className="text-xs text-purple-300 uppercase mb-4 flex items-center gap-2">
               <span className="w-1.5 h-1.5 bg-purple-400 rounded-full" />
@@ -126,7 +120,6 @@ export function Projects() {
               {project.desc}
             </p>
 
-            {/* Metrics */}
             <div className="flex flex-wrap gap-2 mb-6">
               {project.metrics.map((m) => (
                 <span
@@ -138,7 +131,6 @@ export function Projects() {
               ))}
             </div>
 
-            {/* Tags */}
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <span
@@ -151,7 +143,6 @@ export function Projects() {
             </div>
           </div>
 
-          {/* RIGHT (featured only) */}
           {project.id === 'featured' && (
             <div className="bg-white/5 border border-white/10 rounded-lg p-6 backdrop-blur-lg">
               {project.stats.map((stat) => (

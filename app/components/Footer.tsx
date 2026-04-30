@@ -9,7 +9,6 @@ const Footer = () => {
   const [showPopup, setShowPopup] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
 
-  // Close popup when clicking outside
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (popupRef.current && !popupRef.current.contains(e.target as Node)) {
@@ -25,7 +24,6 @@ const Footer = () => {
       className="relative w-full pt-32 pb-16 px-4 sm:px-8 lg:px-16 xl:px-24 overflow-hidden"
       id="contact"
     >
-      {/* Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute h-full w-full bg-black bg-grid-white/[0.1]">
           <div className="absolute pointer-events-none inset-0 flex items-center justify-center bg-black [mask-image:radial-gradient(ellipse_at_center,transparent_10%,black)]" />
@@ -51,7 +49,6 @@ const Footer = () => {
             project or just say hello!
           </p>
 
-          {/* CTA button + popup */}
           <div className="relative mb-16" ref={popupRef}>
             <MagicButton
               title="Get in Touch"
@@ -70,11 +67,9 @@ const Footer = () => {
                   transition={{ duration: 0.2, ease: "easeOut" }}
                   className="absolute left-1/2 -translate-x-1/2 mt-3 w-72 z-50"
                 >
-                  {/* Gradient border shell */}
                   <div className="rounded-2xl bg-gradient-to-br from-blue-500/40 via-purple-500/40 to-pink-500/40 p-[1.5px]">
                     <div className="rounded-2xl bg-[#0a0a12]/95 backdrop-blur-xl p-4 flex flex-col gap-3">
 
-                      {/* Header */}
                       <div className="flex items-center justify-between mb-1">
                         <p className="text-white text-sm font-semibold">How would you like to connect?</p>
                         <button
@@ -85,7 +80,6 @@ const Footer = () => {
                         </button>
                       </div>
 
-                      {/* Email option */}
                       <a
                         href="mailto:pkpavan.ise@gmail.com"
                         onClick={() => setShowPopup(false)}
@@ -101,7 +95,6 @@ const Footer = () => {
                         <FaLocationArrow className="text-white/20 group-hover:text-blue-400 transition-colors ml-auto text-xs" />
                       </a>
 
-                      {/* Resume download option */}
                       <a
                         href="/resume.pdf"
                         download="Pavan_Kumar_R_Resume.pdf"
@@ -118,7 +111,6 @@ const Footer = () => {
                         <FaLocationArrow className="text-white/20 group-hover:text-purple-400 transition-colors ml-auto text-xs" />
                       </a>
 
-                      {/* Phone option */}
                       <a
                         href="tel:+918971092326"
                         onClick={() => setShowPopup(false)}
@@ -137,7 +129,6 @@ const Footer = () => {
                     </div>
                   </div>
 
-                  {/* Arrow pointer */}
                   <div className="absolute -top-[7px] left-1/2 -translate-x-1/2 w-3 h-3 rotate-45 bg-gradient-to-br from-blue-500/40 to-purple-500/40 rounded-sm" />
                 </motion.div>
               )}
@@ -145,7 +136,6 @@ const Footer = () => {
           </div>
         </motion.div>
 
-        {/* Contact cards */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
@@ -195,7 +185,6 @@ const Footer = () => {
           </div>
         </motion.div>
 
-        {/* Bottom bar */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

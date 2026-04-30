@@ -34,7 +34,6 @@ export function Experience() {
   return (
     <section id="experience" className="py-20 lg:py-32 relative overflow-hidden">
 
-      {/* Background glow */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-[-200px] left-[-150px] w-[400px] h-[400px] bg-purple-500 opacity-20 blur-[120px] rounded-full"></div>
         <div className="absolute bottom-[-200px] right-[-150px] w-[400px] h-[400px] bg-blue-500 opacity-20 blur-[120px] rounded-full"></div>
@@ -43,7 +42,6 @@ export function Experience() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -61,7 +59,6 @@ export function Experience() {
 
         <div className="relative max-w-4xl mx-auto">
 
-          {/* Timeline line (softened) */}
           <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-blue-400/50 via-purple-500/40 to-transparent" />
 
           <div className="space-y-12">
@@ -75,7 +72,6 @@ export function Experience() {
                 className="relative pl-12"
               >
 
-                {/* Dot */}
                 <motion.div
                   initial={{ scale: 0 }}
                   whileInView={{ scale: 1 }}
@@ -83,7 +79,6 @@ export function Experience() {
                   className="absolute -left-1.5 top-1 w-3 h-3 bg-blue-400 rounded-full shadow-[0_0_15px_rgba(59,130,246,0.6)]"
                 />
 
-                {/* Glass Card */}
                 <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl p-6 transition-all duration-300 hover:border-blue-400/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.15)]">
 
                   <div className="text-xs text-purple-300 mb-2 font-mono">

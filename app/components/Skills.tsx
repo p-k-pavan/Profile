@@ -94,7 +94,6 @@ export function Skills() {
   return (
    <section id="skills" className="py-20 lg:py-32 relative overflow-hidden">
 
-  {/* Background glow */}
   <div className="absolute inset-0 -z-10">
     <div className="absolute top-[-200px] left-[-150px] w-[400px] h-[400px] bg-purple-500 opacity-20 blur-[120px] rounded-full"></div>
     <div className="absolute bottom-[-200px] right-[-150px] w-[400px] h-[400px] bg-blue-500 opacity-20 blur-[120px] rounded-full"></div>
@@ -103,7 +102,6 @@ export function Skills() {
 
   <div className="max-w-7xl mx-auto px-6 lg:px-12">
 
-    {/* Header */}
     <motion.div
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
@@ -119,7 +117,6 @@ export function Skills() {
       <div className="w-16 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto" />
     </motion.div>
 
-    {/* Grid */}
     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
       {skillCategories.map((category, idx) => (
@@ -128,12 +125,9 @@ export function Skills() {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: idx * 0.1 }}
-          
-          /* 🔥 GLASS CARD */
           className="relative backdrop-blur-xl bg-white/5 border border-white/10 rounded-xl p-7 transition-all duration-300 hover:border-blue-400/30 hover:shadow-[0_0_40px_rgba(59,130,246,0.15)]"
         >
 
-          {/* Header */}
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-white/10">
               <category.icon className="w-5 h-5 text-blue-300" />
@@ -141,7 +135,6 @@ export function Skills() {
             <span className="font-semibold text-white">{category.name}</span>
           </div>
 
-          {/* Skills */}
           <div className="flex flex-wrap gap-2">
             {category.skills.map((skill) => (
               <motion.span

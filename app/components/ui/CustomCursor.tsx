@@ -26,13 +26,11 @@ export function CustomCursor() {
     };
 
     function animate() {
-      // ring (medium delay)
       rx += (mx - rx) * 0.12;
       ry += (my - ry) * 0.12;
       ring!.style.left = rx + 'px';
       ring!.style.top = ry + 'px';
 
-      // fog (slow delay → smooth trailing)
       fx += (mx - fx) * 0.06;
       fy += (my - fy) * 0.06;
       fog!.style.left = fx + 'px';
@@ -44,7 +42,6 @@ export function CustomCursor() {
     document.addEventListener('mousemove', handleMouseMove);
     animate();
 
-    // hover scaling
     const interactiveEls = document.querySelectorAll('a, button, [data-interactive]');
 
     const handleEnter = () => {
@@ -73,7 +70,6 @@ export function CustomCursor() {
 
   return (
     <>
-      {/* 🔥 FOG LAYER (TRAIL) */}
       <div
         ref={fogRef}
         className="fixed w-[300px] h-[300px] pointer-events-none z-[9997] -translate-x-1/2 -translate-y-1/2 blur-3xl opacity-60"
@@ -89,7 +85,6 @@ export function CustomCursor() {
         }}
       />
 
-      {/* INNER DOT */}
       <div
         ref={cursorRef}
         className="fixed w-3 h-3 rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-transform duration-100"
@@ -99,7 +94,6 @@ export function CustomCursor() {
         }}
       />
 
-      {/* OUTER RING */}
       <div
         ref={ringRef}
         className="fixed w-10 h-10 rounded-full pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 transition-transform duration-150"
